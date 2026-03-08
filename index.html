@@ -7,82 +7,116 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#000;
-color:#fff;
+font-family:'Inter',sans-serif;
+background:#0a0a0a;
+color:white;
 line-height:1.6;
 }
+
+/* NAV */
 
 nav{
 position:sticky;
 top:0;
-background:#000;
+background:rgba(10,10,10,0.95);
+backdrop-filter:blur(10px);
 border-bottom:1px solid #222;
-padding:20px;
+padding:18px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:10;
 }
 
+.logo{
+font-weight:700;
+letter-spacing:1px;
+}
+
 nav a{
-color:white;
+color:#ddd;
 text-decoration:none;
 margin-left:20px;
 font-size:14px;
 }
 
-.logo{
-font-weight:bold;
-font-size:18px;
-}
+/* SECTIONS */
 
 section{
-padding:100px 20px;
 max-width:1100px;
 margin:auto;
+padding:120px 20px;
+}
+
+/* HERO */
+
+.hero{
+padding-top:160px;
 }
 
 h1{
 font-size:64px;
 line-height:1.1;
+margin-bottom:20px;
 }
 
 h2{
-font-size:42px;
+font-size:40px;
 margin-bottom:30px;
 }
 
 p{
 font-size:20px;
-color:#ccc;
+color:#bdbdbd;
 }
 
 .button{
 display:inline-block;
 margin-top:30px;
-padding:16px 32px;
+padding:16px 34px;
 background:white;
 color:black;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+border-radius:4px;
 }
+
+/* GRID */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:40px;
-margin-top:40px;
+margin-top:50px;
 }
 
 .card{
-border:1px solid #333;
+border:1px solid #222;
 padding:40px;
+border-radius:6px;
+transition:0.3s;
 }
+
+.card:hover{
+border-color:#555;
+transform:translateY(-4px);
+}
+
+/* PACKAGES */
 
 .packages{
 display:grid;
@@ -92,9 +126,12 @@ margin-top:50px;
 }
 
 .package{
-border:1px solid #444;
+border:1px solid #222;
 padding:40px;
+border-radius:6px;
 }
+
+/* MENTOR */
 
 .mentor-grid{
 display:grid;
@@ -108,15 +145,16 @@ width:100%;
 border-radius:6px;
 }
 
+/* CASE */
+
 .case{
-border:1px solid #333;
+border:1px solid #222;
 padding:30px;
-margin-bottom:30px;
+margin-bottom:20px;
+border-radius:6px;
 }
 
-.cta{
-text-align:center;
-}
+/* FORM */
 
 form{
 max-width:500px;
@@ -128,30 +166,37 @@ margin-top:40px;
 }
 
 input, textarea{
-padding:12px;
+padding:14px;
 border:none;
+border-radius:4px;
+font-family:'Inter';
 }
 
 button{
-padding:14px;
-border:none;
+padding:16px;
 background:white;
-color:black;
-font-weight:bold;
+border:none;
+font-weight:600;
 cursor:pointer;
+border-radius:4px;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:40px;
+padding:50px;
 border-top:1px solid #222;
-margin-top:80px;
+margin-top:100px;
+color:#777;
 }
+
+/* MOBILE */
 
 @media(max-width:800px){
 
 h1{
-font-size:42px;
+font-size:40px;
 }
 
 .mentor-grid{
@@ -178,13 +223,13 @@ grid-template-columns:1fr;
 
 </nav>
 
-<section>
+<section class="hero">
 
 <h1>Mężczyźni nie potrzebują więcej motywacji.<br>Potrzebują kierunku.</h1>
 
 <p>
-Mentoring dla mężczyzn, którzy chcą odzyskać kontrolę nad swoim życiem,
-relacjami i decyzjami.
+Mentoring dla mężczyzn którzy chcą odzyskać kontrolę nad
+życiem, relacjami i decyzjami.
 </p>
 
 <a class="button" href="#apply">Umów rozmowę mentoringową</a>
@@ -199,12 +244,12 @@ relacjami i decyzjami.
 
 <div class="card">
 <h3>Brak kierunku</h3>
-<p>Masz pracę, ale nie masz sensu.</p>
+<p>Masz pracę, ale nie masz poczucia sensu.</p>
 </div>
 
 <div class="card">
 <h3>Presja</h3>
-<p>Kariera, relacje, oczekiwania.</p>
+<p>Kariera, relacje, oczekiwania społeczne.</p>
 </div>
 
 <div class="card">
@@ -224,12 +269,12 @@ relacjami i decyzjami.
 
 <div class="card">
 <h3>Diagnoza</h3>
-<p>Analiza twojej sytuacji życiowej.</p>
+<p>Analiza twojej sytuacji i decyzji.</p>
 </div>
 
 <div class="card">
 <h3>Strategia</h3>
-<p>Budujemy plan działania.</p>
+<p>Budujemy kierunek działania.</p>
 </div>
 
 <div class="card">
@@ -249,17 +294,17 @@ relacjami i decyzjami.
 
 <div class="package">
 <h3>Sesja mentoringowa</h3>
-<p>90 minut</p>
+<p>90 minut intensywnej rozmowy.</p>
 </div>
 
 <div class="package">
 <h3>Program mentoringowy</h3>
-<p>3 miesiące</p>
+<p>3 miesiące pracy nad kierunkiem życia.</p>
 </div>
 
 <div class="package">
 <h3>Mentoring strategiczny</h3>
-<p>6 miesięcy</p>
+<p>6 miesięcy głębokiej transformacji.</p>
 </div>
 
 </div>
@@ -283,19 +328,15 @@ Twórca projektu <strong>ChlopJakDab</strong>.
 </p>
 
 <p>
-Mentoring dla mężczyzn, którzy chcą odzyskać kierunek
-w życiu i podejmować decyzje z odpowiedzialnością.
-</p>
-
-<p>
-Pracuję z mężczyznami nad:
+Pracuję z mężczyznami nad odzyskaniem kierunku,
+odpowiedzialności i sensu działania.
 </p>
 
 <ul>
-<li>kierunkiem życiowym</li>
-<li>karierą</li>
-<li>relacjami</li>
-<li>odpowiedzialnością</li>
+<li>kierunek życiowy</li>
+<li>decyzje zawodowe</li>
+<li>relacje</li>
+<li>odpowiedzialność</li>
 </ul>
 
 </div>
@@ -310,24 +351,24 @@ Pracuję z mężczyznami nad:
 
 <div class="case">
 <h3>Kryzys zawodowy</h3>
-<p>Mężczyzna 38 lat — zmiana kierunku kariery.</p>
+<p>Zmiana kierunku kariery i odbudowa pewności.</p>
 </div>
 
 <div class="case">
 <h3>Rozwód</h3>
-<p>Praca nad stabilnością emocjonalną.</p>
+<p>Stabilizacja emocjonalna i nowy plan życia.</p>
 </div>
 
 <div class="case">
 <h3>Utrata sensu</h3>
-<p>Powrót do odpowiedzialności i działania.</p>
+<p>Powrót do działania i odpowiedzialności.</p>
 </div>
 
 </section>
 
-<section id="apply" class="cta">
+<section id="apply">
 
-<h2>Jeśli czujesz że utknąłeś — porozmawiajmy.</h2>
+<h2 style="text-align:center">Aplikuj na mentoring</h2>
 
 <form>
 
@@ -345,7 +386,7 @@ Pracuję z mężczyznami nad:
 
 <footer>
 
-<p>© Mariusz Dąb | ChlopJakDab</p>
+2026 © Mariusz Dąb | ChlopJakDab
 
 </footer>
 
