@@ -223,20 +223,37 @@ Relacje
 </section>
 
 <section class="section" id="kontakt">
+<h2>Aplikuj o mentoring</h2>
 
-<h2>Umów rozmowę</h2>
+<form name="mentoring" method="POST" data-netlify="true">
 
-<a class="button">
-Rezerwuj termin
-</a>
+<input type="hidden" name="form-name" value="mentoring">
 
-</section>
+<p>
+<input type="text" name="name" placeholder="Imię" required>
+</p>
 
-<footer>
+<p>
+<input type="email" name="email" placeholder="Email" required>
+</p>
 
-© ChlopJakDab
+<p>
+<textarea name="problem" placeholder="Z czym się zmagasz?" required></textarea>
+</p>
 
-</footer>
+<p>
+<select name="urgency">
+<option>Jak pilne jest rozwiązanie?</option>
+<option>Bardzo pilne</option>
+<option>Średnie</option>
+<option>Eksploruję temat</option>
+</select>
+</p>
 
-</body>
-</html>
+<p>
+<button class="button" type="submit">
+Wyślij aplikację
+</button>
+</p>
+
+</form>
