@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Treść", name: "body", widget: "markdown" }
+
+  - name: "case_studies"
+    label: "Case Studies"
+    folder: "cases"
+    create: true
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Historia", name: "body", widget: "markdown" }
