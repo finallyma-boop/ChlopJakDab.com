@@ -8,21 +8,45 @@ public_folder: "/images"
 
 collections:
 
-  - name: "pages"
+  - name: "homepage"
     label: "Strona główna"
     files:
-      - label: "Homepage"
+      - label: "Strona główna"
         name: "home"
         file: "content/home.md"
         fields:
+
           - { label: "Hook", name: "hook", widget: "string" }
-          - { label: "Opis", name: "description", widget: "text" }
+
+          - { label: "Opis hero", name: "description", widget: "text" }
+
+          - { label: "Opis projektu", name: "about", widget: "text" }
+
+          - label: "Mentoring"
+            name: "mentoring"
+            widget: "list"
+            fields:
+              - { label: "Tytuł", name: "title", widget: "string" }
+              - { label: "Opis", name: "text", widget: "text" }
+
+          - label: "Counselling"
+            name: "counselling"
+            widget: "text"
+
+          - label: "Pakiety"
+            name: "packages"
+            widget: "list"
+            fields:
+              - { label: "Nazwa", name: "name", widget: "string" }
+              - { label: "Czas", name: "price", widget: "string" }
+              - { label: "Opis", name: "desc", widget: "text" }
 
   - name: "articles"
     label: "Artykuły"
     folder: "blog"
     create: true
     slug: "{{slug}}"
+
     fields:
       - { label: "Tytuł", name: "title", widget: "string" }
       - { label: "Data", name: "date", widget: "datetime" }
