@@ -3,96 +3,161 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChlopJakDab | Mentoring dla mężczyzn</title>
 
-<title>ChlopJakDab</title>
-
-<meta name="description" content="Styl życia. Siła charakteru. Mentalność zwycięzcy.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#0f0f0f;
-color:white;
+font-family:Arial, Helvetica, sans-serif;
+background:#000;
+color:#fff;
+line-height:1.6;
 }
 
-header{
+nav{
+position:sticky;
+top:0;
+background:#000;
+border-bottom:1px solid #222;
+padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:#111;
-}
-
-.logo{
-font-size:24px;
-font-weight:bold;
+z-index:10;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin-left:20px;
+font-size:14px;
 }
 
-.hero{
-height:70vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(#00000099,#00000099),url("https://images.unsplash.com/photo-1508672019048-805c876b67e2");
-background-size:cover;
+.logo{
+font-weight:bold;
+font-size:18px;
 }
 
-.hero h1{
-font-size:60px;
-margin-bottom:20px;
+section{
+padding:100px 20px;
+max-width:1100px;
+margin:auto;
 }
 
-.hero p{
+h1{
+font-size:64px;
+line-height:1.1;
+}
+
+h2{
+font-size:42px;
+margin-bottom:30px;
+}
+
+p{
 font-size:20px;
-opacity:0.8;
+color:#ccc;
 }
 
 .button{
+display:inline-block;
 margin-top:30px;
-padding:12px 30px;
-background:#ffffff;
+padding:16px 32px;
+background:white;
 color:black;
 text-decoration:none;
 font-weight:bold;
-border-radius:5px;
 }
 
-.section{
-padding:60px 10%;
-}
-
-.posts{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-top:40px;
+}
+
+.card{
+border:1px solid #333;
+padding:40px;
+}
+
+.packages{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
+margin-top:50px;
 }
 
-.post{
-background:#1a1a1a;
-padding:20px;
-border-radius:8px;
+.package{
+border:1px solid #444;
+padding:40px;
 }
 
-.post h3{
-margin-top:0;
+.mentor-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.mentor-photo img{
+width:100%;
+border-radius:6px;
+}
+
+.case{
+border:1px solid #333;
+padding:30px;
+margin-bottom:30px;
+}
+
+.cta{
+text-align:center;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:40px;
+}
+
+input, textarea{
+padding:12px;
+border:none;
+}
+
+button{
+padding:14px;
+border:none;
+background:white;
+color:black;
+font-weight:bold;
+cursor:pointer;
 }
 
 footer{
 text-align:center;
 padding:40px;
-background:#111;
-margin-top:40px;
+border-top:1px solid #222;
+margin-top:80px;
+}
+
+@media(max-width:800px){
+
+h1{
+font-size:42px;
+}
+
+.mentor-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 </style>
@@ -101,56 +166,186 @@ margin-top:40px;
 
 <body>
 
-<header>
+<nav>
 
 <div class="logo">ChlopJakDab</div>
 
-<nav>
-<a href="/">Home</a>
-<a href="/blog">Blog</a>
-<a href="/admin">Admin</a>
+<div>
+<a href="#mentoring">Mentoring</a>
+<a href="#about">O mnie</a>
+<a href="#apply">Aplikuj</a>
+</div>
+
 </nav>
 
-</header>
+<section>
 
-<section class="hero">
+<h1>Mężczyźni nie potrzebują więcej motywacji.<br>Potrzebują kierunku.</h1>
 
-<h1>Bądź jak dąb</h1>
+<p>
+Mentoring dla mężczyzn, którzy chcą odzyskać kontrolę nad swoim życiem,
+relacjami i decyzjami.
+</p>
 
-<p>Siła charakteru. Dyscyplina. Mentalność zwycięzcy.</p>
-
-<a class="button" href="/blog">Czytaj blog</a>
+<a class="button" href="#apply">Umów rozmowę mentoringową</a>
 
 </section>
 
-<section class="section">
+<section>
 
-<h2>Najnowsze artykuły</h2>
+<h2>Dlaczego coraz więcej mężczyzn się gubi</h2>
 
-<div class="posts">
+<div class="grid">
 
-<div class="post">
-<h3>Pierwszy artykuł</h3>
-<p>Jak budować mentalność zwycięzcy.</p>
+<div class="card">
+<h3>Brak kierunku</h3>
+<p>Masz pracę, ale nie masz sensu.</p>
 </div>
 
-<div class="post">
-<h3>Dyscyplina</h3>
-<p>Dlaczego dyscyplina jest ważniejsza niż motywacja.</p>
+<div class="card">
+<h3>Presja</h3>
+<p>Kariera, relacje, oczekiwania.</p>
 </div>
 
-<div class="post">
-<h3>Siła charakteru</h3>
-<p>Jak stać się człowiekiem którego nie da się złamać.</p>
+<div class="card">
+<h3>Samotność decyzji</h3>
+<p>Nikt nie mówi ci prawdy.</p>
 </div>
 
 </div>
+
+</section>
+
+<section id="mentoring">
+
+<h2>Jak wygląda mentoring</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Diagnoza</h3>
+<p>Analiza twojej sytuacji życiowej.</p>
+</div>
+
+<div class="card">
+<h3>Strategia</h3>
+<p>Budujemy plan działania.</p>
+</div>
+
+<div class="card">
+<h3>Egzekucja</h3>
+<p>Regularne sesje mentoringowe.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Programy mentoringowe</h2>
+
+<div class="packages">
+
+<div class="package">
+<h3>Sesja mentoringowa</h3>
+<p>90 minut</p>
+</div>
+
+<div class="package">
+<h3>Program mentoringowy</h3>
+<p>3 miesiące</p>
+</div>
+
+<div class="package">
+<h3>Mentoring strategiczny</h3>
+<p>6 miesięcy</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="mentor-grid">
+
+<div class="mentor-photo">
+<img src="images/mariusz.jpg">
+</div>
+
+<div>
+
+<h2>Mariusz Dąb</h2>
+
+<p>
+Twórca projektu <strong>ChlopJakDab</strong>.
+</p>
+
+<p>
+Mentoring dla mężczyzn, którzy chcą odzyskać kierunek
+w życiu i podejmować decyzje z odpowiedzialnością.
+</p>
+
+<p>
+Pracuję z mężczyznami nad:
+</p>
+
+<ul>
+<li>kierunkiem życiowym</li>
+<li>karierą</li>
+<li>relacjami</li>
+<li>odpowiedzialnością</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Historie mężczyzn</h2>
+
+<div class="case">
+<h3>Kryzys zawodowy</h3>
+<p>Mężczyzna 38 lat — zmiana kierunku kariery.</p>
+</div>
+
+<div class="case">
+<h3>Rozwód</h3>
+<p>Praca nad stabilnością emocjonalną.</p>
+</div>
+
+<div class="case">
+<h3>Utrata sensu</h3>
+<p>Powrót do odpowiedzialności i działania.</p>
+</div>
+
+</section>
+
+<section id="apply" class="cta">
+
+<h2>Jeśli czujesz że utknąłeś — porozmawiajmy.</h2>
+
+<form>
+
+<input type="text" placeholder="Imię">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="4" placeholder="Twoja sytuacja"></textarea>
+
+<button>Wyślij zgłoszenie</button>
+
+</form>
 
 </section>
 
 <footer>
 
-© 2026 ChlopJakDab
+<p>© Mariusz Dąb | ChlopJakDab</p>
 
 </footer>
 
