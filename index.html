@@ -3,26 +3,26 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>ChlopJakDab | Mentoring dla mężczyzn</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mentoring dla mężczyzn którzy chcą odzyskać kierunek życia, decyzji i relacji. Projekt ChlopJakDab.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 <style>
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#0a0a0a;
+background:linear-gradient(180deg,#07122b,#0c1f4f);
 color:white;
 line-height:1.6;
 }
@@ -32,26 +32,25 @@ line-height:1.6;
 nav{
 position:sticky;
 top:0;
-background:rgba(10,10,10,0.95);
-backdrop-filter:blur(10px);
-border-bottom:1px solid #222;
-padding:18px 30px;
+background:rgba(5,10,30,0.9);
+backdrop-filter:blur(8px);
 display:flex;
 justify-content:space-between;
-align-items:center;
+padding:20px 30px;
+border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:10;
+}
+
+nav a{
+color:#d6e1ff;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
 }
 
 .logo{
 font-weight:700;
 letter-spacing:1px;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-margin-left:20px;
-font-size:14px;
 }
 
 /* SECTIONS */
@@ -68,31 +67,34 @@ padding:120px 20px;
 padding-top:160px;
 }
 
+.hook{
+font-size:14px;
+letter-spacing:2px;
+color:#8fb1ff;
+text-transform:uppercase;
+margin-bottom:20px;
+}
+
 h1{
 font-size:64px;
 line-height:1.1;
 margin-bottom:20px;
 }
 
-h2{
-font-size:40px;
-margin-bottom:30px;
-}
-
 p{
 font-size:20px;
-color:#bdbdbd;
+color:#c7d4ff;
 }
 
 .button{
 display:inline-block;
 margin-top:30px;
 padding:16px 34px;
-background:white;
-color:black;
+background:#3a6cff;
+color:white;
 text-decoration:none;
 font-weight:600;
-border-radius:4px;
+border-radius:6px;
 }
 
 /* GRID */
@@ -105,15 +107,16 @@ margin-top:50px;
 }
 
 .card{
-border:1px solid #222;
+background:rgba(255,255,255,0.03);
 padding:40px;
-border-radius:6px;
+border-radius:8px;
+border:1px solid rgba(255,255,255,0.05);
 transition:0.3s;
 }
 
 .card:hover{
-border-color:#555;
-transform:translateY(-4px);
+transform:translateY(-5px);
+border-color:#4c7dff;
 }
 
 /* PACKAGES */
@@ -122,13 +125,14 @@ transform:translateY(-4px);
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-margin-top:50px;
+margin-top:40px;
 }
 
 .package{
-border:1px solid #222;
+background:rgba(255,255,255,0.03);
 padding:40px;
-border-radius:6px;
+border-radius:8px;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 /* MENTOR */
@@ -142,16 +146,16 @@ align-items:center;
 
 .mentor-photo img{
 width:100%;
-border-radius:6px;
+border-radius:8px;
 }
 
 /* CASE */
 
 .case{
-border:1px solid #222;
+background:rgba(255,255,255,0.03);
 padding:30px;
 margin-bottom:20px;
-border-radius:6px;
+border-radius:8px;
 }
 
 /* FORM */
@@ -165,43 +169,40 @@ gap:15px;
 margin-top:40px;
 }
 
-input, textarea{
+input,textarea{
 padding:14px;
 border:none;
-border-radius:4px;
+border-radius:6px;
 font-family:'Inter';
 }
 
 button{
 padding:16px;
-background:white;
 border:none;
+background:#3a6cff;
+color:white;
 font-weight:600;
 cursor:pointer;
-border-radius:4px;
+border-radius:6px;
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:50px;
-border-top:1px solid #222;
+padding:60px;
+border-top:1px solid rgba(255,255,255,0.08);
 margin-top:100px;
-color:#777;
+color:#9bb1ff;
 }
 
 /* MOBILE */
 
 @media(max-width:800px){
 
-h1{
-font-size:40px;
-}
+h1{font-size:42px}
 
-.mentor-grid{
-grid-template-columns:1fr;
-}
+.mentor-grid{grid-template-columns:1fr}
 
 }
 
@@ -225,18 +226,20 @@ grid-template-columns:1fr;
 
 <section class="hero">
 
+<div class="hook">MENTORING DLA MĘŻCZYZN</div>
+
 <h1>Mężczyźni nie potrzebują więcej motywacji.<br>Potrzebują kierunku.</h1>
 
 <p>
-Mentoring dla mężczyzn którzy chcą odzyskać kontrolę nad
-życiem, relacjami i decyzjami.
+Jeśli czujesz że utknąłeś między oczekiwaniami świata a tym
+kim naprawdę chcesz być — mentoring pomoże odzyskać kontrolę.
 </p>
 
 <a class="button" href="#apply">Umów rozmowę mentoringową</a>
 
 </section>
 
-<section>
+<section data-aos="fade-up">
 
 <h2>Dlaczego coraz więcej mężczyzn się gubi</h2>
 
@@ -249,7 +252,7 @@ Mentoring dla mężczyzn którzy chcą odzyskać kontrolę nad
 
 <div class="card">
 <h3>Presja</h3>
-<p>Kariera, relacje, oczekiwania społeczne.</p>
+<p>Kariera, relacje i oczekiwania społeczne.</p>
 </div>
 
 <div class="card">
@@ -261,7 +264,7 @@ Mentoring dla mężczyzn którzy chcą odzyskać kontrolę nad
 
 </section>
 
-<section id="mentoring">
+<section id="mentoring" data-aos="fade-up">
 
 <h2>Jak wygląda mentoring</h2>
 
@@ -269,7 +272,7 @@ Mentoring dla mężczyzn którzy chcą odzyskać kontrolę nad
 
 <div class="card">
 <h3>Diagnoza</h3>
-<p>Analiza twojej sytuacji i decyzji.</p>
+<p>Analiza twojej sytuacji życiowej.</p>
 </div>
 
 <div class="card">
@@ -286,7 +289,7 @@ Mentoring dla mężczyzn którzy chcą odzyskać kontrolę nad
 
 </section>
 
-<section>
+<section data-aos="fade-up">
 
 <h2>Programy mentoringowe</h2>
 
@@ -311,7 +314,7 @@ Mentoring dla mężczyzn którzy chcą odzyskać kontrolę nad
 
 </section>
 
-<section id="about">
+<section id="about" data-aos="fade-up">
 
 <div class="mentor-grid">
 
@@ -328,8 +331,8 @@ Twórca projektu <strong>ChlopJakDab</strong>.
 </p>
 
 <p>
-Pracuję z mężczyznami nad odzyskaniem kierunku,
-odpowiedzialności i sensu działania.
+Mentoring dla mężczyzn którzy chcą odzyskać
+kierunek życia, odpowiedzialność i sens działania.
 </p>
 
 <ul>
@@ -345,13 +348,13 @@ odpowiedzialności i sensu działania.
 
 </section>
 
-<section>
+<section data-aos="fade-up">
 
 <h2>Historie mężczyzn</h2>
 
 <div class="case">
 <h3>Kryzys zawodowy</h3>
-<p>Zmiana kierunku kariery i odbudowa pewności.</p>
+<p>Zmiana kierunku kariery i odzyskanie pewności.</p>
 </div>
 
 <div class="case">
@@ -366,17 +369,17 @@ odpowiedzialności i sensu działania.
 
 </section>
 
-<section id="apply">
+<section id="apply" data-aos="fade-up">
 
 <h2 style="text-align:center">Aplikuj na mentoring</h2>
 
-<form>
+<form action="https://formspree.io/f/xovajpyr" method="POST">
 
-<input type="text" placeholder="Imię">
+<input type="text" name="name" placeholder="Imię">
 
-<input type="email" placeholder="Email">
+<input type="email" name="email" placeholder="Email">
 
-<textarea rows="4" placeholder="Twoja sytuacja"></textarea>
+<textarea name="message" rows="4" placeholder="Twoja sytuacja"></textarea>
 
 <button>Wyślij zgłoszenie</button>
 
@@ -386,9 +389,18 @@ odpowiedzialności i sensu działania.
 
 <footer>
 
-2026 © Mariusz Dąb | ChlopJakDab
+© Mariusz Dąb | ChlopJakDab
 
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1000,
+once:true
+});
+</script>
 
 </body>
 </html>
