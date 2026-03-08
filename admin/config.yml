@@ -1,16 +1,29 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: finallyma-boop/ChlopJakDab.com
   branch: main
 
 media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "blog"
-    label: "Blog"
+
+  - name: "pages"
+    label: "Strona główna"
+    files:
+      - label: "Homepage"
+        name: "home"
+        file: "content/home.md"
+        fields:
+          - { label: "Hook", name: "hook", widget: "string" }
+          - { label: "Opis", name: "description", widget: "text" }
+
+  - name: "articles"
+    label: "Artykuły"
     folder: "blog"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Treść", name: "body", widget: "markdown" }
