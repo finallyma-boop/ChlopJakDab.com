@@ -661,39 +661,52 @@
 
       <div class="form-card">
         <!-- Najprostsza wersja: mailto (możesz później podmienić na dowolny system) -->
-        <form action="mailto:twoj@mail.com" method="post" enctype="text/plain">
-          <div class="form-row">
-            <label for="name">Imię</label>
-            <input type="text" id="name" name="Imię" required />
-          </div>
-          <div class="form-row">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="Email" required />
-          </div>
-          <div class="form-row">
-            <label for="package">Wybrany pakiet</label>
-            <select id="package" name="Pakiet">
-              <option value="start">Pakiet Start – 1 sesja</option>
-              <option value="3m">Pakiet 3 miesiące – Transformacja</option>
-              <option value="6m">Pakiet 6 miesięcy – Głęboka zmiana</option>
-              <option value="niepewny">Nie wiem, potrzebuję pomocy w wyborze</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="challenge">Co jest Twoim największym wyzwaniem w tym momencie?</label>
-            <textarea id="challenge" name="Największe wyzwanie" required></textarea>
-          </div>
-          <div class="form-row">
-            <label for="why">Dlaczego chcesz pracować ze mną?</label>
-            <textarea id="why" name="Dlaczego chcesz pracować ze mną?" required></textarea>
-          </div>
-          <div class="form-row">
-            <button type="submit" class="btn-primary">Wyślij aplikację</button>
-          </div>
-          <div class="form-note">
-            Wysłanie aplikacji nie zobowiązuje Cię do niczego. Odpowiem, jeśli uznam, że mogę realnie Ci pomóc.
-          </div>
-        </form>
+<form action="https://formspree.io/f/maylqzqv" method="POST">
+  <div class="form-row">
+    <label for="name">Imię</label>
+    <input type="text" id="name" name="Imię" required />
+  </div>
+
+  <div class="form-row">
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="Email" required />
+  </div>
+
+  <div class="form-row">
+    <label for="package">Wybrany pakiet</label>
+    <select id="package" name="Pakiet">
+      <option value="start">Pakiet Start – 1 sesja</option>
+      <option value="3m">Pakiet 3 miesiące – Transformacja</option>
+      <option value="6m">Pakiet 6 miesięcy – Głęboka zmiana</option>
+      <option value="niepewny">Nie wiem, potrzebuję pomocy w wyborze</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="challenge">Co jest Twoim największym wyzwaniem w tym momencie?</label>
+    <textarea id="challenge" name="Największe wyzwanie" required></textarea>
+  </div>
+
+  <div class="form-row">
+    <label for="why">Dlaczego chcesz pracować ze mną?</label>
+    <textarea id="why" name="Dlaczego chcesz pracować ze mną?" required></textarea>
+  </div>
+
+  <!-- Anti-spam honeypot -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <!-- Redirect after success -->
+  <input type="hidden" name="_redirect" value="https://chlopjakdab.com/dziekuje.html">
+
+  <div class="form-row">
+    <button type="submit" class="btn-primary">Wyślij aplikację</button>
+  </div>
+
+  <div class="form-note">
+    Wysłanie aplikacji nie zobowiązuje Cię do niczego. Odpowiem, jeśli uznam, że mogę realnie Ci pomóc.
+  </div>
+</form>
+
       </div>
 
       <div class="cta-final">
