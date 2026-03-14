@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Oak Man | Mentoring & Guidance for Men</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #05060a;
+      --card: #0f1118;
+      --accent: #e0b15a;
+      --accent-soft: rgba(224,177,90,0.12);
+      --text: #f5f5f5;
+      --muted: #a0a4b3;
+      --danger: #ff6b6b;
+      --border: #262938;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151827 0, #05060a 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: var(--accent);
+    }
+    .tagline {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(10,12,20,0.8);
+      color: var(--muted);
+    }
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+      background: #f0c26c;
+    }
+    .btn-secondary {
+      background: transparent;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-riskfree {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .hero-riskfree span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hero-card {
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      background: radial-gradient(circle at top left, #20253a 0, #0b0d14 55%);
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+    }
+    .hero-card-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .hero-card-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .hero-card-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .hero-card-list li span {
+      color: var(--accent);
+      font-size: 14px;
+      margin-top: 1px;
+    }
+    .hero-card-footer {
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: 6px;
+    }
+
+    /* ——— EVERYTHING BELOW THIS LINE WAS MISSING IN YOUR EN VERSION ——— */
+
+    section {
+      margin-bottom: 40px;
+    }
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .problems-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .problems-list li {
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      background: rgba(10,12,20,0.9);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .problems-list li strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: rgba(10,12,20,0.9);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+    }
+    .card-title {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+    .card-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .card-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .card-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .card-list li span {
+      color: var(--accent);
+      font-size: 14px;
+      margin-top: 1px;
+    }
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .package {
+      background: rgba(10,12,20,0.95);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      position: relative;
+    }
+    .package.popular {
+      border-color: var(--accent);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    }
+    .package-badge {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+    .package-name {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .package-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .package-price {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .package-price span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .package-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .package-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .package-list li span {
+      color: var(--accent);
+      font-size: 14px;
+      margin-top: 1px;
+    }
+    .package-riskfree {
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .package-cta {
+      margin-top: 4px;
+    }
+    .btn-outline {
+      background: transparent;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .step {
+      background: rgba(10,12,20,0.9);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 12px 12px 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .step-number {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .step-title {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .about {
+      background: rgba(10,12,20,0.9);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .about strong {
+      color: var(--text);
+    }
+    .form-card {
+      background: rgba(10,12,20,0.95);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+    }
+    .form-row {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+      color: var(--muted);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #05060a;
+      color: var(--text);
+      font-size: 13px;
+      resize: vertical;
+    }
+    textarea { min-height: 80px; }
+    .form-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .cta-final {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .cta-final strong {
+      color: var(--text);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="logo">Oak Man</div>
+        <div class="tagline">Mentoring & Guidance for Men</div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-eyebrow">1:1 Support for Men</div>
+        <h1 class="hero-title">I help men regain clarity, direction and peace.</h1>
+        <p class="hero-sub">
+          I work with men who need clarity, direction and support — without therapy, without pretending, without bullshit.
+        </p>
+        <div class="hero-badges">
+          <div class="badge">1:1 Work</div>
+          <div class="badge">Confidential</div>
+          <div class="badge">No Bullshit</div>
+        </div>
+        <div class="hero-cta-row">
+          <a href="#application" class="btn-primary">Apply for Mentoring</a>
+          <a href="#packages" class="btn-secondary">View Packages</a>
+        </div>
+        <div class="hero-riskfree">
+          <span>First session is risk‑free:</span> if you don’t feel the impact, you simply say “stop.”
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-title">If you're in a place where you feel you can’t keep going like this — and you need clarity, direction and peace:</div>
+        <ul class="hero-card-list">
+          <li><span>•</span><div>From the outside everything looks fine, but inside you feel chaos.</div></li>
+          <li><span>•</span><div>You have a job, but no sense of meaning or direction.</div></li>
+          <li><span>•</span><div>Your relationships feel shallow or tense — and you don’t know how to fix them.</div></li>
+          <li><span>•</span><div>You do a lot, but you don’t feel like you’re truly moving forward.</div></li>
+        </ul>
+        <div class="hero-card-footer">
+          If you want to regain control, calm and a sense of direction — you're in the right place.
+        </div>
+      </aside>
+    </section>
+    <!-- WHO THIS IS FOR -->
+    <section>
+      <div class="section-label">Who This Is For</div>
+      <h2 class="section-title">I work with men who look “fine” from the outside, but inside know this is not the life they want.</h2>
+      <p class="section-sub">
+        If you want to finally stand firmly on your own feet — this mentoring is for you.
+      </p>
+      <ul class="problems-list">
+        <li>
+          <strong>You have a job, but you feel no meaning.</strong>
+          Everything works, but it doesn’t feel like your life.
+        </li>
+        <li>
+          <strong>Your relationships are shallow or difficult.</strong>
+          It’s hard to open up, and it’s hard to set boundaries.
+        </li>
+        <li>
+          <strong>You do a lot, but feel little effect.</strong>
+          A busy calendar, but no real sense of progress.
+        </li>
+        <li>
+          <strong>Inside there is chaos.</strong>
+          Thoughts, emotions, decisions — all mixed together.
+        </li>
+      </ul>
+    </section>
+
+    <!-- WHAT YOU GET + HOW IT WORKS -->
+    <section>
+      <div class="grid-2">
+        <div>
+          <div class="section-label">What You Get</div>
+          <h2 class="section-title">We work concretely, without fluff.
+Instead of theory — a clear plan, 1:1 conversation and real action.</h2>
+
+          <div class="card">
+            <h3 class="card-title">1. Analysis of Your Situation</h3>
+            <p class="card-sub">We break your life down into clear pieces.</p>
+            <ul class="card-list">
+              <li><span>•</span><div>Where are you really?</div></li>
+              <li><span>•</span><div>What works and what doesn’t?</div></li>
+              <li><span>•</span><div>What blocks your direction?</div></li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:10px;">
+            <h3 class="card-title">2. Direction of Action</h3>
+            <p class="card-sub">We create a plan that makes sense and is doable.</p>
+            <ul class="card-list">
+              <li><span>•</span><div>Priorities and principles.</div></li>
+              <li><span>•</span><div>You know what you’re doing and why.</div></li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:10px;">
+            <h3 class="card-title">3. Mentoring Sessions</h3>
+            <p class="card-sub">Regular 1:1 work — 90 minutes of focused conversation.</p>
+            <ul class="card-list">
+              <li><span>•</span><div>Concrete tasks between sessions.</div></li>
+              <li><span>•</span><div>A steady direction, not a one‑time motivational boost.</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-label">How It Works</div>
+          <h2 class="section-title">You don’t have to commit for months right away.</h2>
+          <p class="section-sub">
+            First we check if this is right for you.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">Step 1</div>
+              <div class="step-title">You Apply</div>
+              <p>A short form where you describe your situation and choose a package.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">Step 2</div>
+              <div class="step-title">First Session — 90 Minutes</div>
+              <p>We meet online. We check if there’s chemistry and if this way of working fits you.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">Step 3</div>
+              <div class="step-title">Decision After the Session</div>
+              <p>If you feel it’s for you — we continue.
+If not — you simply say “stop.”
+No pressure. No obligations. No risk.</p>
+            </div>
+          </div>
+
+          <p class="section-sub" style="margin-top:10px;">
+            <strong>No pressure. No obligations. No risk.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- PACKAGES -->
+    <section id="packages">
+      <div class="section-label">Packages</div>
+      <h2 class="section-title">Choose the way of working that fits you.</h2>
+      <p class="section-sub">
+        All packages begin with a 90‑minute first session. After that, you decide whether we continue.
+      </p>
+
+      <div class="packages">
+
+        <!-- Package 1 -->
+        <div class="package">
+          <div class="package-name">Start Package – 1 Session</div>
+          <div class="package-desc">For men who want to check whether this way of working is right for them.</div>
+          <div class="package-price">
+            Price: <strong>set individually</strong><br />
+            <span>90‑minute online session</span>
+          </div>
+          <ul class="package-list">
+            <li><span>•</span><div>One intensive 1:1 session.</div></li>
+            <li><span>•</span><div>We focus on one specific area.</div></li>
+            <li><span>•</span><div>Clear recommendations at the end.</div></li>
+          </ul>
+          <div class="package-cta">
+            <a href="#application" class="btn-outline">Apply for Start Package</a>
+          </div>
+        </div>
+
+        <!-- Package 3 months -->
+        <div class="package popular">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-name">3‑Month Package – Transformation</div>
+          <div class="package-desc">For men who want to regain direction and organize key areas of life.</div>
+          <div class="package-price">
+            Price: <strong>set after the first session</strong><br />
+            <span>6 sessions (every 2 weeks) + tasks between sessions</span>
+          </div>
+          <ul class="package-list">
+            <li><span>•</span><div>6 sessions of 90 minutes.</div></li>
+            <li><span>•</span><div>A personalized action plan.</div></li>
+            <li><span>•</span><div>Email support between sessions.</div></li>
+          </ul>
+          <div class="package-riskfree">
+            First session is risk‑free — you decide after it.
+          </div>
+          <div class="package-cta">
+            <a href="#application" class="btn-primary">Apply for 3‑Month Package</a>
+          </div>
+        </div>
+
+        <!-- Package 6 months -->
+        <div class="package">
+          <div class="package-name">6‑Month Package – Deep Change</div>
+          <div class="package-desc">For men who want full transformation and lasting change.</div>
+          <div class="package-price">
+            Price: <strong>set after the first session</strong><br />
+            <span>12 sessions + priority scheduling</span>
+          </div>
+          <ul class="package-list">
+            <li><span>•</span><div>12 sessions of 90 minutes.</div></li>
+            <li><span>•</span><div>Work on deeper patterns and habits.</div></li>
+            <li><span>•</span><div>Priority scheduling.</div></li>
+          </ul>
+          <div class="package-riskfree">
+            We start with one session. If it doesn’t feel right — we don’t continue.
+          </div>
+          <div class="package-cta">
+            <a href="#application" class="btn-outline">Apply for 6‑Month Package</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section>
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">A practitioner, not a theorist.</h2>
+      <div class="about">
+        <p>
+          <strong>For years I tried to handle life on my own — work, relationships, pressure, expectations.
+          I did a lot, but I didn’t feel like I was truly moving forward.</strong>
+        </p>
+        <p style="margin-top:8px;">
+          At some point I realized that if I wanted change, I had to start acting differently.
+          Step by step, I rebuilt my life, regained direction and peace.
+        </p>
+        <p style="margin-top:8px;">
+          Today I work with men who want the same:
+          to build confidence, regain control and start living consciously — without chaos, without pretending, without guessing.
+        </p>
+        <p style="margin-top:8px;">
+          My method is simple:  
+          clarity → direction → action.  
+          No theory. No fluff. No motivational slogans.
+        </p>
+        <p style="margin-top:8px;">
+          <strong>I’m not a theorist.
+          I’m a practitioner who walked this path and knows how to guide you further.</strong>
+        </p>
+      </div>
+    </section>
+    <!-- APPLICATION / FORM -->
+    <section id="application">
+      <div class="section-label">Application</div>
+      <h2 class="section-title">Apply for Mentoring.</h2>
+      <p class="section-sub">
+        This is not a mass program.
+        I work with a limited number of men at the same time.  
+        Write honestly where you are and what you're looking for.
+      </p>
+
+      <div class="form-card">
+        <form action="https://formspree.io/f/mbdzygvo" method="POST">
+
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="package">Selected Package</label>
+            <select id="package" name="Package">
+              <option value="start">Start Package – 1 Session</option>
+              <option value="3m">3‑Month Package – Transformation</option>
+              <option value="6m">6‑Month Package – Deep Change</option>
+              <option value="unsure">I'm not sure — help me choose</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="challenge">Write honestly where you are and what you're looking for.</label>
+            <textarea id="challenge" name="Main Challenge" required></textarea>
+          </div>
+
+          <!-- Anti-spam honeypot -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <!-- Redirect after success -->
+          <input type="hidden" name="_redirect" value="https://chlopjakdab.com/dziekuje.html">
+
+          <div class="form-row">
+            <button type="submit" class="btn-primary">Send Application</button>
+          </div>
+
+          <div class="form-note">
+            I will contact you if I can genuinely help.
+          </div>
+
+        </form>
+      </div>
+
+      <div class="cta-final">
+        <p>
+          <strong>The first session is the moment of decision.</strong><br />
+          If you feel it's not for you — you simply say “stop.”
+        </p>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
